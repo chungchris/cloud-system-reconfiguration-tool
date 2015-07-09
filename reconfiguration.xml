@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!-- Generate Time: 05/07/2015 17:55:57-->
+<SYSTEM name="mycloudsystem">
+	<CLUSTER name="tpcw_tier1_base"> <!--name is necessary-->
+		<SCALETYPE>UP</SCALETYPE> <!--"OUT" or "UP"-->
+		<!--<IMAGE></IMAGE>-->
+		<!--<LOADBALANCER></LOADBALANCER>-->
+		<!--<INISCRIPT></INISCRIPT>--> <!--The  full path of the initialization script as a node is newly created(cloned) or rebooted-->
+		<NUMBER>1</NUMBER> <!--Do not Change-->
+		<RUNNING>1</RUNNING> <!--How many running node in this cluster from your expectation-->
+		<!--<RUNNING_MAX></RUNNING_MAX>--> <!--The upper limit of the amount of the running node in this cluster-->
+		<NODE name="tpcw_tier1_base" id="i-56b30e5b">
+			<DRIVER>ec2_us_west_oregon</DRIVER> <!--All node in a cluster should use the same driver-->
+			<TYPE>t2.micro</TYPE>
+			<STATUS>running</STATUS>
+		</NODE>
+	</CLUSTER>
+	<CLUSTER name="tpcw_tier2_base"> <!--name is necessary-->
+		<SCALETYPE>OUT</SCALETYPE> <!--"OUT" or "UP"-->
+		<IMAGE>ami-f71b1dc7</IMAGE> <!--Give the based image of the instances in this cluster-->
+		<LOADBALANCER>tpcw2</LOADBALANCER> <!--Give the name of load-balancer from the same provider-->
+		<INISCRIPT>/home/chris/Dropbox/Thesis/tpcw2.txt</INISCRIPT> <!--The  full path of the initialization script as a node is newly created(cloned) or rebooted-->
+		<NUMBER>1</NUMBER> <!--Do not Change-->
+		<RUNNING>1</RUNNING> <!--How many running node in this cluster from your expectation-->
+		<!--<RUNNING_MAX></RUNNING_MAX>--> <!--The upper limit of the amount of the running node in this cluster-->
+		<NODE name="tpcw_tier2_base" id="i-250e39d2">
+			<DRIVER>ec2_us_west_oregon</DRIVER> <!--All node in a cluster should use the same driver-->
+			<TYPE>t2.micro</TYPE>
+			<STATUS>running</STATUS>
+		</NODE>
+	</CLUSTER>
+	<CLUSTER name="tpcw_tier3_base"> <!--name is necessary-->
+		<SCALETYPE>UP</SCALETYPE> <!--"OUT" or "UP"-->
+		<!--<IMAGE></IMAGE>-->
+		<!--<LOADBALANCER></LOADBALANCER>-->
+		<!--<INISCRIPT></INISCRIPT>--> <!--The  full path of the initialization script as a node is newly created(cloned) or rebooted-->
+		<NUMBER>1</NUMBER> <!--Do not Change-->
+		<RUNNING>1</RUNNING> <!--How many running node in this cluster from your expectation-->
+		<!--<RUNNING_MAX></RUNNING_MAX>--> <!--The upper limit of the amount of the running node in this cluster-->
+		<NODE name="tpcw_tier3_base" id="i-1d192eea">
+			<DRIVER>ec2_us_west_oregon</DRIVER> <!--All node in a cluster should use the same driver-->
+			<TYPE>t2.micro</TYPE>
+			<STATUS>running</STATUS>
+		</NODE>
+	</CLUSTER>
+</SYSTEM>
+
+<!--Pending Nodes-->
+<!--
+<NODE name="tp_redundant" id="i-0ada6507">
+	<DRIVER>ec2_us_west_oregon</DRIVER>
+	<TYPE>t2.micro</TYPE>
+	<STATUS>stopped</STATUS>
+</NODE>
+<NODE name="tpcw3_redundant1" id="i-c72a1d30">
+	<DRIVER>ec2_us_west_oregon</DRIVER>
+	<TYPE>t2.micro</TYPE>
+	<STATUS>stopped</STATUS>
+</NODE>
+<NODE name="tpcw_tier2_base_1435767085.69" id="i-2ed7e1d9">
+	<DRIVER>ec2_us_west_oregon</DRIVER>
+	<TYPE>t2.micro</TYPE>
+	<STATUS>running</STATUS>
+</NODE>
+<NODE name="tpcw_tier2_redundant" id="i-28488525">
+	<DRIVER>ec2_us_west_oregon</DRIVER>
+	<TYPE>t2.micro</TYPE>
+	<STATUS>stopped</STATUS>
+</NODE>
+-->
